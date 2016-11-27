@@ -1,0 +1,14 @@
+repositories {
+    jcenter()
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+dependencies {
+    compile 'com.google.guava:guava:19.0'
+    compile 'org.projectlombok:lombok:1.16.10'
+    testCompile 'junit:junit:4.12'
+    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-junit
+    testCompile 'org.hamcrest:hamcrest-junit:2.0.0.0'
+}
