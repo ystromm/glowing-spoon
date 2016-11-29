@@ -24,16 +24,28 @@
                 Genre
             </th>
             <th>
+                Writer
+            </th>
+            <th>
+                Country
+            </th>
+            <th>
                 Year
             </th>
             <tr class=row" ng-repeat="movie in movies.Movies">
-                <td class="col-md-4">
+                <td class="col-md-2">
                     {{movie.Title}}
                 </td>
-                <td class="col-md-4">
+                <td class="col-md-2">
                     {{movie.Genre}}
                 </td>
-                <td class="col-md-4">
+                <td class="col-md-3">
+                    {{movie.Writer}}
+                </td>
+                <td class="col-md-2">
+                    {{movie.Country}}
+                </td>
+                <td class="col-md-1">
                     {{movie.Year}}
                 </td>
             </tr>
