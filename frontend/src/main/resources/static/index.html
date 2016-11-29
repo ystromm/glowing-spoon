@@ -15,41 +15,53 @@
 <body>
 <div ng-app="frontend">
     <div class="container" ng-controller="moviesController">
-
-        <table class="table">
-            <th>
+        <div class="row">
+            <div class="col-md-3">
                 Title
-            </th>
-            <th>
+            </div>
+            <div class="col-md-2">
                 Genre
-            </th>
-            <th>
+            </div>
+            <div class="col-md-3">
                 Writer
-            </th>
-            <th>
+            </div>
+            <div class="col-md-2">
                 Country
-            </th>
-            <th>
+            </div>
+            <div class="col-md-2">
                 Year
-            </th>
-            <tr class=row" ng-repeat="movie in movies.Movies">
-                <td class="col-md-2">
+            </div>
+        </div>
+        <div ng-repeat="movie in movies.Movies" ng-click="select(movie)">
+            <div class="row">
+                <div class="col-md-3">
                     {{movie.Title}}
-                </td>
-                <td class="col-md-2">
+                </div>
+                <div class="col-md-2">
                     {{movie.Genre}}
-                </td>
-                <td class="col-md-3">
+                </div>
+                <div class="col-md-3">
                     {{movie.Writer}}
-                </td>
-                <td class="col-md-2">
+                </div>
+                <div class="col-md-2">
                     {{movie.Country}}
-                </td>
-                <td class="col-md-1">
+                </div>
+                <div class="col-md-2">
                     {{movie.Year}}
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div>
+            <div class="row" ng-if="movie.selected">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-11">
+                    Rated: {{movie.Rated}}<br>
+                    Released: {{movie.Released}}<br>
+                    Runtime: {{movie.Runtime}}<br>
+                    Actors: {{movie.Actors}}<br>
+                    Plot: {{movie.Plot}}<br>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>
