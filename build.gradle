@@ -6,6 +6,7 @@ task wrapper(type: Wrapper) {
 
 task zip(type:Zip) {
     from ('.')
+    destinationDir file("build")
     exclude '**/build'
     exclude '.git'
     exclude ".idea"
