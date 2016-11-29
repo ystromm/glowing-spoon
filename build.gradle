@@ -4,3 +4,12 @@ task wrapper(type: Wrapper) {
     gradleVersion = '3.1'
 }
 
+task zip(type:Zip) {
+    from ('.')
+    exclude '**/build'
+    exclude '.git'
+    exclude ".idea"
+    exclude ".gradle"
+    exclude "*.zip"
+    archiveName "kodtest.zip"
+}
