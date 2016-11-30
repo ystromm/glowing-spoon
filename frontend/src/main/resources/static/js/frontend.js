@@ -39,8 +39,15 @@
                 });
                 $scope.genres = _.uniqBy($scope.genres, 'name');
                 movie.Writer.split(',').forEach(function(writer) {
-                    $scope.writers.push({name: writer.substring(0, writer.indexOf('(')).trim()});
+                    var index = writer.indexOf('(');
+                    if (index != -1) {
+                        $scope.writers.push({name: writer.substring(0, index).trim()});
+                    }
+                    else {
+                        $scope.writers.push({name: writer.trim()});
+                    }
                 });
+                $scope.writers = _.uniqBy($scope.writers, 'name');
             });
         });
         }
