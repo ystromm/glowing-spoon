@@ -25,6 +25,7 @@ dependencies {
     runtime 'org.webjars:angularjs:1.5.8'
     runtime 'org.webjars:bootstrap:3.3.7-1'
     runtime 'org.webjars:jquery:3.1.1'
+    runtime 'org.webjars:lodash:4.15.0'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'org.springframework.boot:spring-boot-starter-mustache'
 }
