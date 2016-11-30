@@ -33,11 +33,9 @@
                 movie.Country.split(',').forEach(function(country) {
                     $scope.countries.push({name: country.trim()});
                 });
-                $scope.countries = _.uniqBy($scope.countries, 'name');
                 movie.Genre.split(',').forEach(function(genre) {
                     $scope.genres.push({name: genre.trim()});
                 });
-                $scope.genres = _.uniqBy($scope.genres, 'name');
                 movie.Writer.split(',').forEach(function(writer) {
                     var index = writer.indexOf('(');
                     if (index != -1) {
@@ -47,8 +45,10 @@
                         $scope.writers.push({name: writer.trim()});
                     }
                 });
-                $scope.writers = _.uniqBy($scope.writers, 'name');
             });
+            $scope.countries = _.uniqBy($scope.countries, 'name');
+            $scope.genres = _.uniqBy($scope.genres, 'name');
+            $scope.writers = _.uniqBy($scope.writers, 'name');
         });
         }
         getMovies();
