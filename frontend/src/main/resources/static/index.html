@@ -8,8 +8,7 @@
     <!--<link rel="stylesheet" type="text/css" href="css/style.css"/>-->
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/webjars/angularjs/angular.js"></script>
-    <script type="text/javascript" src="/webjars/angularjs/angular-resource.js"></script>
+    <script type="text/javascript" src="/webjars/angularjs/angular.min.js"></script>
     <script type="text/javascript" src="js/frontend.js"></script>
 </head>
 <body>
@@ -17,22 +16,26 @@
     <div class="container" ng-controller="moviesController">
         <div class="row">
             <div class="col-md-3">
-                Title
+                <b>Title</b>
             </div>
             <div class="col-md-2">
-                Genre
+                <b>Genre</b>
+                <select ng-model="genre" ng-options="genre.name for genre in genres"></select>
             </div>
             <div class="col-md-3">
-                Writer
+                <b>Writer</b>
             </div>
             <div class="col-md-2">
-                Country
+                <b>Country</b>
+                <select ng-model="country" ng-options="country.name for country in countries"></select>
             </div>
             <div class="col-md-2">
-                Year
+                <b>Year</b>
             </div>
         </div>
-        <div ng-repeat="movie in movies.Movies" ng-click="select(movie)">
+        <div class="row">
+        </div>
+        <div ng-repeat="movie in movies | filter:filter" ng-click="select(movie)">
             <div class="row">
                 <div class="col-md-3">
                     {{movie.Title}}
