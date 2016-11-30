@@ -12,12 +12,18 @@
             {name: ''}
         ];
         $scope.genre = $scope.genres[0];
+        $scope.writers = [
+            {name: ''}
+        ];
+        $scope.writer = $scope.writers[0];
         $scope.select = function(movie) {
             movie.selected = !movie.selected;
         };
 
         $scope.filter = function (movie) {
-        return movie.Country.includes($scope.country.name) && movie.Genre.includes($scope.genre.name);
+        return movie.Country.includes($scope.country.name)
+            && movie.Genre.includes($scope.genre.name)
+            && movie.Writer.includes($scope.writer.name);
         };
 
         function getMovies() {
@@ -25,10 +31,15 @@
             $scope.movies = result.data.Movies;
             $scope.movies.forEach(function(movie) {
                 movie.Country.split(',').forEach(function(country) {
-                    $scope.countries.push({name: country});
+                    $scope.countries.push({name: country.trim()});
                 });
+                $scope.countries = _.uniqBy($scope.countries, 'name');
                 movie.Genre.split(',').forEach(function(genre) {
-                    $scope.genres.push({name: genre});
+                    $scope.genres.push({name: genre.trim()});
+                });
+                $scope.genres = _.uniqBy($scope.genres, 'name');
+                movie.Writer.split(',').forEach(function(writer) {
+                    $scope.writers.push({name: writer.substring(0, writer.indexOf('(')).trim()});
                 });
             });
         });

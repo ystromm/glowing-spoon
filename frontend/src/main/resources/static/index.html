@@ -9,6 +9,7 @@
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/webjars/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="/webjars/lodash/lodash.min.js"></script>
     <script type="text/javascript" src="js/frontend.js"></script>
 </head>
 <body>
@@ -24,6 +25,7 @@
             </div>
             <div class="col-md-3">
                 <b>Writer</b>
+                <select ng-model="writer" ng-options="writer.name for writer in writers"></select>
             </div>
             <div class="col-md-2">
                 <b>Country</b>
